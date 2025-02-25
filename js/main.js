@@ -1,5 +1,8 @@
 const menu = document.getElementById("menu");
 const container = document.getElementById("container");
+var swiperContainer = document.querySelector('container');  // Adjust selector to match your container
+var hammer = new Hammer(swiperContainer);
+
 
 var swiper = new Swiper(".swiper", {
     effect: "cube",
@@ -26,6 +29,25 @@ function Navigate(indx) {
     Array.from(document.querySelectorAll(".Links li"))[indx].classList.add("activeLink")
     swiper.slideTo(indx, 1000, true)
 }
+
+hammer.on('swiperight', function() {
+    console.log('Swiped right');
+    var currentIndex = swiper.realIndex;  // Get the current slide index from Swiper.js
+    if (currentIndex > 0) {
+        // Navigate to previous slide
+        Navigate(currentIndex - 1);
+    }
+});
+
+// Attach swiperight (left swipe to go to previous slide)
+hammer.on('swipeleft', function() {
+    console.log('Swiped left');
+    var currentIndex = swiper.realIndex;  // Get the current slide index from Swiper.js
+    if (currentIndex < swiper.slides.length - 1) {
+        // Navigate to next slide
+        Navigate(currentIndex + 1);
+    }
+});
 
 function toggleMenu() {
     menu.classList.toggle('open');  
