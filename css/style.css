@@ -649,7 +649,7 @@ form h2 .SocialLinks i:hover{
     overflow: auto;
 }
 
-@media (max-width: 992px) {
+@media (max-width: 1194px) {
     .hamburger {
         display: block;
     }
@@ -672,7 +672,7 @@ form h2 .SocialLinks i:hover{
     }
 }
 
-@media (min-width: 993px) {
+@media (min-width: 1194px) {
     aside {
         transform: translateX(0);
         opacity: 1;
