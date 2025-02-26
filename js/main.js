@@ -1,6 +1,6 @@
 const menu = document.getElementById("menu");
 const container = document.getElementById("container");
-var swiperContainer = document.querySelector('container');  // Adjust selector to match your container
+var swiperContainer = document.querySelector('.container');  // Adjust selector to match your container
 var hammer = new Hammer(swiperContainer);
 
 
