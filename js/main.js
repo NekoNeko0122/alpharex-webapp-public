@@ -1,8 +1,8 @@
 const menu = document.getElementById("menu");
 const container = document.getElementById("container");
-var swiperContainer = document.querySelector('.container');  // Adjust selector to match your container
-var hammer = new Hammer(swiperContainer);
-
+const guessBtn = document.getElementById("home-guest-btn");
+const servBtn = document.getElementById("home-service-btn");
+var hammer = new Hammer(document.documentElement);
 
 var swiper = new Swiper(".swiper", {
     effect: "cube",
@@ -31,20 +31,15 @@ function Navigate(indx) {
 }
 
 hammer.on('swiperight', function() {
-    console.log('Swiped right');
-    var currentIndex = swiper.realIndex;  // Get the current slide index from Swiper.js
+    var currentIndex = swiper.realIndex;  
     if (currentIndex > 0) {
-        // Navigate to previous slide
         Navigate(currentIndex - 1);
     }
 });
 
-// Attach swiperight (left swipe to go to previous slide)
 hammer.on('swipeleft', function() {
-    console.log('Swiped left');
-    var currentIndex = swiper.realIndex;  // Get the current slide index from Swiper.js
+    var currentIndex = swiper.realIndex; 
     if (currentIndex < swiper.slides.length - 1) {
-        // Navigate to next slide
         Navigate(currentIndex + 1);
     }
 });
@@ -61,6 +56,15 @@ function handleResize() {
         menu.classList.remove('open');
         container.classList.remove('open');
     }
+
+    if (width < 1450) {
+        guessBtn.textContent = "As Guest";
+        servBtn.textContent = "Our Services";
+    } else {
+        guessBtn.textContent = "Continue As Guest";
+        servBtn.textContent = "See Our Services"
+    }
+
 }
 
 window.addEventListener('resize', handleResize);
