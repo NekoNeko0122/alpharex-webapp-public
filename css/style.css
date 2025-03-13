@@ -56,7 +56,8 @@ aside {
     font-weight: 400;
     font-style: normal;
     font-size: 1.3rem;
-    width: 20rem;
+    width: 18vw;
+    max-width: 20rem;
     display: flex;
     flex-direction: column;
     height: 100%;  
@@ -122,13 +123,10 @@ aside .brand-logo {
     transition-duration: 0.2s;
 }
 
-aside .brand-name {
-    font-family: "Wallpoet", serif;
-    font-size: 2.5rem;
-    font-weight: 600;
+aside .brand-name {   
     list-style-type: none;
     display: flex;
-    color: rgb(0, 0, 0);
+    
     justify-content: center;
     cursor: pointer;
     position: relative;
@@ -151,7 +149,7 @@ aside .brand:hover {
 }
 
 footer {
-    position:relative;
+    position: relative;
     bottom:5px;
     right:0px;
     text-align: center;
@@ -224,10 +222,10 @@ footer {
     background-color: #ffa07a;
 }
 
-/* Show the dropdown when the parent is hovered */
+
 .login-drp:hover .dropdown {
-    opacity: 1; /* Make it visible */
-    transform: translateX(0); /* Slide it into place */
+    opacity: 1; 
+    transform: translateX(0); 
     pointer-events: auto;
 }
 
@@ -238,27 +236,23 @@ footer {
 
 .mySwiper {
     flex: 1;
-    height: 100%;
+    overflow: hidden;
 }
 
 .home-slide {
     color: #442c2c;
     display: flex;
-    
-
 }
 
 .HomeContent {
     margin: auto 0px;
     flex: 1;
     height: auto;
-    
     padding: 50px;
     user-select: none;
 }
 
 .SideImg {
-
     margin-right: 50px;
 }
 
@@ -268,14 +262,12 @@ footer {
 
 
 .HomeContent h1 {
-    
-    font-size: 2.5vw;
-    
+    font-size: max(2.5vw, 30px);
     margin-bottom: 10px;
 }
 
 .HomeContent h2 {
-    font-size: 1.5vw;
+    font-size: max(1.5vw, 20px);
     margin-bottom: 10px;
     font-weight: 600;
 }
@@ -288,28 +280,30 @@ footer {
 .heroline span {
     color: #b33232;
     font-weight: 600;
-    font-size: 1.7rem;
+    font-size: max(1.2vw, 16px);
 }
 
 .heroline {
-    font-size: 1.5rem;
+    font-size: max(1.2vw, 16px);
     font-weight: 500;
-    padding-right:50px;
+    padding-right: 50px;
     text-align: justify;
     margin-right: -210px;
 }
 
 .buttonGroup {
-    
+    position: relative;
     display: flex;
     padding: 10px 0px;
     margin-top: 20px;
-    height: 80px;
+    height: 100%;
     gap: 30px;
+    margin-right: -210px;
 }
 
 .animated-btn {
     flex: 1;
+    height: 50px;
     max-width: 250px;
     background-color: #e2d3d3;
     border: none;
@@ -390,15 +384,14 @@ footer {
 
 .mySwiper {
     width: 80vw;
-    height: 100dvh;
+    height: 100vh;
     overflow: hidden;
     background-color: #343a40;
     
 }
 
 .swiper-slide {
-    width: 100%;
-
+    width: 100vw;
     background-color: #e2d3d3;
     height: 100%;
     background-image: url(../img/bghome4.png);
@@ -431,8 +424,9 @@ footer {
     gap: 3rem;
     grid-template-columns: repeat(3, minmax(100px, 1fr));
     grid-template-rows: repeat(2, 1fr);
-    aspect-ratio: 2;
-    margin-top: 3rem;
+    /* aspect-ratio: 2; */
+    height: 80%;
+    margin-top: 3vh;
 }
 
 
@@ -469,7 +463,7 @@ footer {
 
 .services .service p {
     font-weight: 450;
-    font-size: 1.3rem;
+    font-size: clamp(14px, 1.1vw, 20px);
     color: #f3d9be;
 }
 
@@ -652,7 +646,6 @@ footer {
     color: #000000;
 }
 
-
 .coreval {
     display: flex;
     justify-content: center;
@@ -699,7 +692,6 @@ footer {
     font-size: 0.8vw;
     font-weight: 400;
 }
-
 
 .values-container .swiper-pagination-bullet {
     background: #b33232;
@@ -803,8 +795,6 @@ form input {
     background-color: #7070706f;
 }
 
-
-
 .send-btn {
     grid-column: 1/span 2;
     margin:20px auto ;
@@ -859,138 +849,6 @@ form .SocialLinks:hover, form .SocialLinks i:hover{
 }
 
 
-/* .contact {
-    display: grid;
-    grid-template-columns: 20% 80%;
-    grid-template-rows: 80px calc(25% - 20px) calc(25% - 20px) calc(25% - 20px) calc(25% - 20px);
-    position: relative;
-    padding: 100px;
-    visibility: hidden;
-}
-
-.contact h1 {
-    grid-column: 1/span 3;
-
-    padding: 30px;
-}
-
-.contact form {
-    grid-area: 2/2/ span 5/span 2;
-}
-
-.contactinfo {
-    display: flex;
-    flex-direction: column;
-    padding: 10px;
-    justify-content: center;
-    text-align: center;
-    align-items: center;
-}
-
-.contactinfo h3 {
-    font-size: 1vw;
-}
-
-.contactinfo p {
-    font-size: 0.6vw;
-}
-
-.contactinfo i {
- 
-    font-size: 2.5vw;
-    color: #b33232;
-    margin: 20px auto;
-}
-
-.contact form {
-    display: grid;
-    grid-template-columns: 50% 50%;
-    width: 100%;
-    padding: 20px;
-    height: fit-content;
-}
-
-.contact form h2 {
-    grid-column: 1/span 2;
-    padding: 20px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.contact form input {
-    padding: 15px;
-    border-radius: 10px;
-    margin: 20px;
-    font-family: 'Courier New', Courier, monospace;
-    font-size: 1vw;
-    border: none;
-    color: #ffffff;
-    background-color: #7070706f;
-
-}
-
-.contact form input:focus {
-    border: 2px solid #FFDAB3;
-    outline: none;
-
-}
-
-.contact form textarea {
-    width: calc(100% - 40px);
-
-    grid-column: 1/span 2;
-    margin: 20px;
-    padding: 20px;
-    font-size: 1vw;
-    border-radius: 10px;
-    resize: none;
-    border:none;
-    border: none;
-    color:white;
-    background-color: #7070706f;
-}
-
-.contact form textarea:focus {
-    border: 2px solid #FFDAB3!important;
-}
-.contact button{
-    grid-column: 1/span 2;
-    margin:20px auto ;
-
-}
-
-.send-btn {
-    color: #b33232;
-    height: 40px;
-    width: 10vw;
-    
-}
-
-form .SocialLinks{
-    grid-column: 1/span 2;
-    margin: 20px auto;
-    padding: 5px;
-    width: fit-content;
-    background-color: #FFDAB3;
-    border-radius: 30px;
-    cursor: pointer;
-    transition: all 0.5s ease-in-out;
-    
-}
-form .SocialLinks i{
-    font-size: 1.5vw;
-    padding: 10px;
-    border-radius: 50%;
-    transition: all 0.5s ease-in-out;
-}
-form .SocialLinks:hover, form .SocialLinks i:hover{
-    
-    transform: scale(1.2);
-}
-  */
-
-
 
 @keyframes gradient {
     0% {
@@ -1005,7 +863,6 @@ form .SocialLinks:hover, form .SocialLinks i:hover{
         background-position: 0%;
     }
 }
-
 
 @media (max-width: 1194px) {
     .hamburger {
@@ -1038,7 +895,26 @@ form .SocialLinks:hover, form .SocialLinks i:hover{
     .content {
         margin-left: 0;
     }
+}
 
+@media (max-width: 1300px) {
+    .buttonGroup {
+        
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+        
+    }
+
+    .animated-btn {
+        min-height: 50px;
+        min-width: 200px;
+        gap: 0px;
+    }
+}
+
+@media (min-width: 1668px) {
+    
 }
 
 @media (max-width: 1538px) {
@@ -1048,3 +924,5 @@ form .SocialLinks:hover, form .SocialLinks i:hover{
         font-size: 1.1rem;
     }
 }
+
+
